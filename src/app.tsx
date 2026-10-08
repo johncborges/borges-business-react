@@ -1,0 +1,35 @@
+import Header from './components/header';
+import Hero from './components/hero';
+import Services from './components/services';
+import Process from './components/process';
+import Pricing from './components/pricing';
+import About from './components/about';
+import Contact from './components/contact';
+import { BRAND } from './data';
+
+export default function App() {
+  return (
+    <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <div className="wrap">
+        <Header />
+        <main id="main" tabIndex={-1}>
+          <Hero />
+          <Services />
+          <Process />
+          <Pricing />
+          <About />
+          <Contact />
+        </main>
+        <footer className="site-footer">
+          <span>
+            © {new Date().getFullYear()} {BRAND.name}
+          </span>
+          <span>{BRAND.tagline}</span>
+        </footer>
+      </div>
+    </>
+  );
+}
