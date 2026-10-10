@@ -4,16 +4,16 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div>
-        <p className="label">Digital presence for small businesses</p>
+        <p className="label">Small business websites &amp; Google setup</p>
         <h1 id="hero-title">Make sure customers can find you, and like what they find.</h1>
         <p className="lede">
-          A website is only one piece. Your business also needs to show up in search and on maps, with the
-          right hours and phone number everywhere. I set all of it up and keep it working, for small
-          businesses of any kind, anywhere.
+          A website is only one piece. When someone looks you up, they also need to find you on Google and on
+          maps, with the right hours and phone number everywhere. I set all of it up and keep it working, for
+          small businesses of any kind, anywhere.
         </p>
         <div className="ctas">
           <a className="btn primary" href="#contact">
-            Get a free presence check
+            Get a free online checkup
           </a>
           <a className="btn ghost" href="#services">
             What&apos;s included

@@ -22,6 +22,6 @@ export function buildMessage(req: CheckRequest): string {
 }
 
 export function buildMailto(email: string, req: CheckRequest): string {
-  const subject = `Free presence check: ${req.business.trim()}`;
+  const subject = `Free online checkup: ${req.business.trim()}`;
   return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildMessage(req))}`;
 }

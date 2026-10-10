@@ -43,7 +43,7 @@ export default function Contact() {
     <section id="contact" aria-labelledby="contact-title">
       <div className="contact">
         <div>
-          <p className="label">Free presence check</p>
+          <p className="label">Free online checkup</p>
           <h2 id="contact-title">See what customers see when they search for you.</h2>
           <p className="intro">
             Send me your business name and where you&apos;re located. Within a couple of days you&apos;ll get

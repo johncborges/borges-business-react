@@ -25,7 +25,7 @@ describe('contact message', () => {
 
   it('encodes the subject and body into a mailto link', () => {
     const href = buildMailto('me@example.com', base);
-    expect(href.startsWith('mailto:me@example.com?subject=Free%20presence%20check%3A%20Harbor')).toBe(true);
+    expect(href.startsWith('mailto:me@example.com?subject=Free%20online%20checkup%3A%20Harbor')).toBe(true);
     expect(decodeURIComponent(href.split('&body=')[1])).toBe(buildMessage(base));
   });
 });

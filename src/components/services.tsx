@@ -4,7 +4,7 @@ import SectionHead from './section-head';
 export default function Services() {
   return (
     <section id="services" aria-labelledby="services-title">
-      <SectionHead id="services-title" title="Your whole online presence, handled">
+      <SectionHead id="services-title" title="Everything customers see when they look you up">
         Most small businesses have some of these and are missing others. I check every layer, fix what&apos;s
         broken, and keep it current so you can get back to running your business.
       </SectionHead>

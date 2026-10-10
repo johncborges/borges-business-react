@@ -1,6 +1,6 @@
 # Borges Web
 
-Marketing site for **Borges Web**, a service that builds and maintains a complete, searchable online presence for small businesses: website, search setup, map listings, reviews and a monthly report.
+Marketing site for **Borges Web**, a service that helps small businesses get found online: a website that works on every phone, Google Business Profile and map listings, local SEO, reviews and a monthly report.
 
 Live at <https://web.johncborges.com/> (hosted on DreamHost).
 

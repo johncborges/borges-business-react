@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
-/* Layout: split hero (promise + live "presence check" readout), then the five layers of presence, process, pricing, about, contact. */
+/* Layout: split hero (promise + sample "online checkup" readout), then the six service areas, process, pricing, about, contact. */
 :root {
   --bg: #eef2f0;
   --surface: #ffffff;
@@ -205,7 +205,7 @@ a {
   margin-top: 26px;
 }
 
-/* presence check readout */
+/* online checkup readout */
 .report {
   margin: 0;
   background: var(--surface);
