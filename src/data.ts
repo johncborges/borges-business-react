@@ -61,7 +61,7 @@ export const SERVICES: Service[] = [
     items: ['Mobile-first design', 'Accessible and fast', 'Easy ways to call, book or buy'],
   },
   {
-    label: 'Search',
+    label: 'Search (local SEO)',
     title: 'Found on Google and beyond',
     body: 'The technical groundwork so search engines understand who you are and what you offer.',
     items: [
@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
     ],
   },
   {
-    label: 'Maps & listings',
+    label: 'Google Business Profile & maps',
     title: 'Right details in every directory',
     body: 'Your name, address, phone and hours, the same everywhere people look.',
     items: [
@@ -107,7 +107,7 @@ export interface Step {
 
 export const STEPS: Step[] = [
   {
-    title: 'Free presence check',
+    title: 'Free online checkup',
     body: "I search for your business the way a customer would and send you a short report of what's working and what isn't.",
   },
   { title: 'A clear plan', body: 'We agree on what to fix first, with a flat price. No surprises.' },
@@ -131,7 +131,7 @@ export interface Plan {
 
 export const PLANS: Plan[] = [
   {
-    name: 'Presence fix-up',
+    name: 'Google & listings fix-up',
     price: '$350',
     unit: 'one time',
     items: [

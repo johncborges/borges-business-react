@@ -19,11 +19,11 @@ export default function PresenceReport() {
   const passed = checks.filter((c) => c.status === 'good').length;
 
   return (
-    <figure className="report" aria-label={`Example presence check report for ${business}`}>
+    <figure className="report" aria-label={`Example online checkup for ${business}`}>
       <div className="search">{query}</div>
       <div className="rhead">
         <div>
-          <p className="label">Presence check · example</p>
+          <p className="label">Online checkup · example</p>
           <strong>{business}</strong>
         </div>
         <p className="score" aria-label={`${passed} of ${checks.length} checks passed`}>
