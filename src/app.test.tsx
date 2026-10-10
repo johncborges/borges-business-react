@@ -53,9 +53,12 @@ describe('Free check form', () => {
     const out = screen.getByRole('status');
     expect(out).toHaveTextContent('Business: Harbor Street Bakery');
     expect(out).toHaveTextContent('Location: Lisbon, Portugal');
-    expect(within(out).getByRole('link', { name: 'Open in email' }).getAttribute('href')).toMatch(
-      new RegExp(`^mailto:${BRAND.email}`),
-    );
+    expect(
+      within(out)
+        .getByRole('link', { name: 'Open in email' })
+        .getAttribute('href')
+        ?.startsWith(`mailto:${BRAND.email}?`),
+    ).toBe(true);
     expect(screen.queryByRole('alert')).toBeNull();
   });
 
