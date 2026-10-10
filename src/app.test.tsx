@@ -1,6 +1,6 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './app';
 import { BRAND, PLANS, SAMPLE_REPORT, SECTIONS, SERVICES } from './data';
 
@@ -34,32 +34,59 @@ describe('App', () => {
 });
 
 describe('Free check form', () => {
-  it('asks for the required fields before building the email', async () => {
-    const user = userEvent.setup();
-    render(<App />);
-    await user.click(screen.getByRole('button', { name: 'Request my free check' }));
-    expect(screen.getByRole('alert')).toHaveTextContent('business name');
-    expect(screen.queryByRole('status')).toBeNull();
+  beforeEach(() => vi.stubEnv('VITE_WEB3FORMS_KEY', 'test-key'));
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.unstubAllGlobals();
   });
 
-  it('builds a ready-to-send email from the answers', async () => {
-    const user = userEvent.setup();
-    render(<App />);
+  const fillIn = async (user: ReturnType<typeof userEvent.setup>) => {
     await user.type(screen.getByLabelText('Business name'), 'Harbor Street Bakery');
     await user.type(screen.getByLabelText('City and country'), 'Lisbon, Portugal');
     await user.type(screen.getByLabelText('Your email or phone'), 'owner@example.com');
     await user.click(screen.getByRole('button', { name: 'Request my free check' }));
+  };
 
-    const out = screen.getByRole('status');
-    expect(out).toHaveTextContent('Business: Harbor Street Bakery');
-    expect(out).toHaveTextContent('Location: Lisbon, Portugal');
+  it('asks for the required fields before sending', async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal('fetch', fetchMock);
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: 'Request my free check' }));
+    expect(screen.getByRole('alert')).toHaveTextContent('business name');
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('sends the request and confirms it', async () => {
+    const fetchMock = vi.fn().mockResolvedValue(new Response('{"success":true}', { status: 200 }));
+    vi.stubGlobal('fetch', fetchMock);
+    const user = userEvent.setup();
+    render(<App />);
+    await fillIn(user);
+
+    expect(await screen.findByRole('status')).toHaveTextContent('your request is in');
+    const body = JSON.parse(fetchMock.mock.calls[0][1].body);
+    expect(body).toMatchObject({ business: 'Harbor Street Bakery', location: 'Lisbon, Portugal' });
+  });
+
+  it('explains a failure and offers email instead', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue(new Response('{"message":"Server busy"}', { status: 500 })),
+    );
+    const user = userEvent.setup();
+    render(<App />);
+    await fillIn(user);
+
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('Server busy');
     expect(
-      within(out)
-        .getByRole('link', { name: 'Open in email' })
+      within(alert)
+        .getByRole('link', { name: 'send the same details by email' })
         .getAttribute('href')
         ?.startsWith(`mailto:${BRAND.email}?`),
     ).toBe(true);
-    expect(screen.queryByRole('alert')).toBeNull();
+    expect(screen.getByLabelText('Business name')).toHaveValue('Harbor Street Bakery');
   });
 
   it('copies the email address', async () => {
