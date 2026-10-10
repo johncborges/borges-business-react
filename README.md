@@ -21,6 +21,16 @@ npm run build      # production build in dist/
 
 All copy, prices and contact details live in [`src/data.ts`](src/data.ts). Change the business name in `BRAND` and in `index.html` / `public/sitemap.xml` if it changes.
 
+## Free check form
+
+The form sends requests by email through [Web3Forms](https://web3forms.com) (no server needed).
+
+1. Get a free access key at web3forms.com using the email address that should receive requests.
+2. Copy `.env.example` to `.env.local` and paste the key into `VITE_WEB3FORMS_KEY`.
+3. Rebuild. The key is baked into the build; it is public by design and only lets the form email you.
+
+Without a key the form shows an error and offers a pre-filled email link instead.
+
 ## Deploy to DreamHost
 
 1. `npm run build`
