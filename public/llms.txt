@@ -1,0 +1,31 @@
+# JC Borges
+
+> JC Borges helps small businesses of any kind, anywhere, get found online: a website that works on every phone, Google Business Profile and map listings (Google, Apple, Bing), local SEO, reviews and a plain-English monthly report. Run by John Borges, a principal software engineer based in Rio Vista, California, working with clients by video and email.
+
+Every engagement starts with a free online checkup: John searches for the business the way a customer would and sends a short report of what works and what doesn't. Prices are flat and in US dollars. Clients own their domain, site and accounts, and monthly care can be cancelled any month.
+
+## Services
+
+- [Websites](https://web.johncborges.com/#services): fast, mobile-first sites with easy ways to call, book or buy
+- [Search and local SEO](https://web.johncborges.com/#services): Search Console, sitemap, page titles and business details search engines can read
+- [Google Business Profile and map listings](https://web.johncborges.com/#services): Google, Apple Business Connect, Bing Places and key directories
+- [Reviews](https://web.johncborges.com/#services): review request links, QR cards and reply templates
+- [Domain, email and security](https://web.johncborges.com/#services): domain and hosting moves, email on your own domain, https and backups
+- [Monthly report](https://web.johncborges.com/#services): visits, calls and searches, with one or two next steps
+
+## Pricing
+
+- [Google & listings fix-up](https://web.johncborges.com/#pricing): $350 one time
+- [New site + care](https://web.johncborges.com/#pricing): $900 plus $69 per month
+- [Care only](https://web.johncborges.com/#pricing): $49 per month for an existing site
+
+## Contact
+
+- [Request a free online checkup](https://web.johncborges.com/#contact): business name, location, website and how to reach you
+- [Email](mailto:johncborges+web@gmail.com): johncborges+web@gmail.com
+- [About John Borges](https://web.johncborges.com/#about)
+
+## Optional
+
+- [Sitemap](https://web.johncborges.com/sitemap.xml)
+- [John Borges, personal site](https://www.johncborges.com/)

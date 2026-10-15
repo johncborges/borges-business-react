@@ -24,7 +24,7 @@ export async function sendCheck(req: CheckRequest, botcheck = false, key = acces
       body: JSON.stringify({
         access_key: key,
         subject: `Free online checkup: ${req.business.trim()}`,
-        from_name: 'Borges Web website',
+        from_name: 'JC Borges website',
         replyto: req.reach.includes('@') ? req.reach.trim() : undefined,
         business: req.business.trim(),
         location: req.location.trim() || 'not given',

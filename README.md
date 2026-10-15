@@ -1,6 +1,6 @@
-# Borges Web
+# JC Borges
 
-Marketing site for **Borges Web**, a service that helps small businesses get found online: a website that works on every phone, Google Business Profile and map listings, local SEO, reviews and a monthly report.
+Marketing site for **JC Borges**, a service that helps small businesses get found online: a website that works on every phone, Google Business Profile and map listings, local SEO, reviews and a monthly report.
 
 Live at <https://web.johncborges.com/> (hosted on DreamHost).
 
@@ -20,6 +20,10 @@ npm run build      # production build in dist/
 ## Editing content
 
 All copy, prices and contact details live in [`src/data.ts`](src/data.ts). Change the business name in `BRAND` and in `index.html` / `public/sitemap.xml` if it changes.
+
+## Files for search engines and AI tools
+
+`public/robots.txt`, `public/sitemap.xml` and `public/llms.txt` (a Markdown summary of the site for AI assistants, per [llmstxt.org](https://llmstxt.org)). When prices, services or contact details change in `src/data.ts`, update `public/llms.txt` to match.
 
 ## Free check form
 

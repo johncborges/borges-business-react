@@ -1,52 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 /* Layout: split hero (promise + sample "online checkup" readout), then the six service areas, process, pricing, about, contact. */
 :root {
-  --bg: #eef2f0;
+  --bg: #f4f4f2;
   --surface: #ffffff;
-  --ink: #132a2c;
-  --muted: #4f6664;
-  --line: #c9d6d2;
-  --accent: #1f6658;
+  --ink: #1d1f21;
+  --muted: #5d6166;
+  --line: #d6d7d4;
+  --accent: #c2410c;
   --accent-ink: #ffffff;
-  --gold: #a8771d;
-  --gold-soft: #f3e6c6;
-  --good: #2f7d4a;
-  --bad: #b4442c;
-  --warn: #a8771d;
-  --display: 'Bricolage Grotesque', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
-  --body: 'Public Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
-  --mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  --gold: #1d1f21;
+  --gold-soft: #ffe3cf;
+  --good: #2f7d32;
+  --bad: #c62828;
+  --warn: #b26a00;
+  --display: 'Archivo', 'Arial Black', system-ui, sans-serif;
+  --body: 'Work Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+  --radius: 4px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --bg: #0f1c1d;
-    --surface: #162628;
-    --ink: #e4ece9;
-    --muted: #9db1ad;
-    --line: #2a3e3f;
-    --accent: #4fb39b;
-    --accent-ink: #0c1a1a;
-    --gold: #e0b357;
-    --gold-soft: #2d2716;
-    --good: #5cc27e;
-    --bad: #ec7a5f;
-    --warn: #e0b357;
+    --bg: #151618;
+    --surface: #1e2023;
+    --ink: #ececea;
+    --muted: #a3a6aa;
+    --line: #33363a;
+    --accent: #ff7a33;
+    --accent-ink: #151618;
+    --gold: #ececea;
+    --gold-soft: #3a2617;
+    --good: #6cc070;
+    --bad: #ff6b5e;
+    --warn: #ffb74d;
     color-scheme: dark;
   }
 }
 :root[data-theme='dark'] {
-  --bg: #0f1c1d;
-  --surface: #162628;
-  --ink: #e4ece9;
-  --muted: #9db1ad;
-  --line: #2a3e3f;
-  --accent: #4fb39b;
-  --accent-ink: #0c1a1a;
-  --gold: #e0b357;
-  --gold-soft: #2d2716;
-  --good: #5cc27e;
-  --bad: #ec7a5f;
-  --warn: #e0b357;
+  --bg: #151618;
+  --surface: #1e2023;
+  --ink: #ececea;
+  --muted: #a3a6aa;
+  --line: #33363a;
+  --accent: #ff7a33;
+  --accent-ink: #151618;
+  --gold: #ececea;
+  --gold-soft: #3a2617;
+  --good: #6cc070;
+  --bad: #ff6b5e;
+  --warn: #ffb74d;
   color-scheme: dark;
 }
 
@@ -104,12 +104,25 @@ a {
 }
 
 .site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-block: 22px;
+  padding-block: 14px;
   flex-wrap: wrap;
+  background: var(--bg);
+  /* paint the background and bottom rule edge to edge, beyond the centered column */
+  box-shadow:
+    0 0 0 100vmax var(--bg),
+    0 1px 0 100vmax var(--line);
+  clip-path: inset(0 -100vmax -1px);
+}
+/* keep section headings clear of the sticky header when jumping from the nav */
+[id] {
+  scroll-margin-top: 84px;
 }
 .brand {
   font: 800 1.35rem/1 var(--display);
@@ -162,7 +175,7 @@ a {
   gap: 8px;
   font: 600 1rem/1 var(--body);
   padding: 14px 22px;
-  border-radius: 999px;
+  border-radius: var(--radius);
   text-decoration: none;
   border: 2px solid var(--accent);
   cursor: pointer;
@@ -210,7 +223,7 @@ a {
   margin: 0;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: var(--radius);
   padding: 22px;
   display: flex;
   flex-direction: column;
@@ -316,7 +329,7 @@ section {
 .svc {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--radius);
   padding: 26px;
   display: flex;
   flex-direction: column;
@@ -370,7 +383,7 @@ section {
 }
 .plan {
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--radius);
   padding: 26px;
   display: flex;
   flex-direction: column;
@@ -466,7 +479,7 @@ section {
 form {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 14px;
+  border-radius: var(--radius);
   padding: 26px;
   display: flex;
   flex-direction: column;
@@ -485,7 +498,7 @@ textarea {
   color: var(--ink);
   background: var(--bg);
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 12px;
   width: 100%;
 }
@@ -495,7 +508,7 @@ textarea {
 }
 .out {
   background: var(--gold-soft);
-  border-radius: 10px;
+  border-radius: var(--radius);
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -601,7 +614,7 @@ img {
   color: var(--accent-ink);
   padding: 10px 14px;
   border-radius: 8px;
-  z-index: 10;
+  z-index: 20;
 }
 .skip-link:focus {
   top: 12px;
@@ -645,7 +658,7 @@ form .btn {
 .sent {
   background: var(--surface);
   border: 1px solid var(--accent);
-  border-radius: 14px;
+  border-radius: var(--radius);
   padding: 26px;
   display: flex;
   flex-direction: column;
