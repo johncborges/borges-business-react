@@ -6,8 +6,8 @@
 export const BRAND = {
   name: 'JC Borges',
   owner: 'John Borges',
-  email: 'johncborges+web@gmail.com',
-  url: 'https://web.johncborges.com/',
+  email: 'john@jcborges.com',
+  url: 'https://jcborges.com/',
   tagline: 'Websites, search and listings for small businesses everywhere',
 };
 
