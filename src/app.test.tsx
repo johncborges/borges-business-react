@@ -2,7 +2,7 @@ import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './app';
-import { BRAND, PLANS, SAMPLE_REPORT, SECTIONS, SERVICES } from './data';
+import { BRAND, FAQS, PLANS, SAMPLE_REPORT, SECTIONS, SERVICES } from './data';
 
 describe('App', () => {
   it('has the landmarks and skip link a keyboard or screen-reader user needs', () => {
@@ -118,5 +118,17 @@ describe('Phone menu', () => {
     const nav = screen.getByRole('navigation', { name: 'Main' });
     await user.click(within(nav).getByRole('link', { name: SECTIONS[0].label }));
     expect(screen.getByRole('button', { name: 'Menu' })).toHaveAttribute('aria-expanded', 'false');
+  });
+});
+
+describe('FAQ', () => {
+  it('opens an answer when its question is clicked', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const [first] = FAQS;
+    const question = screen.getByText(first.q);
+    expect(screen.getByText(first.a)).not.toBeVisible();
+    await user.click(question);
+    expect(screen.getByText(first.a)).toBeVisible();
   });
 });

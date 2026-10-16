@@ -21,7 +21,7 @@ export default defineConfig({
     { name: 'phone', use: { ...devices['Pixel 7'] } },
   ],
   webServer: {
-    command: `vite build --outDir dist-e2e && vite preview --outDir dist-e2e --port ${PORT} --strictPort`,
+    command: `node scripts/build.mjs dist-e2e && vite preview --outDir dist-e2e --port ${PORT} --strictPort`,
     url: `http://localhost:${PORT}`,
     env: { VITE_WEB3FORMS_KEY: 'e2e-test-key' },
     reuseExistingServer: !process.env.CI,

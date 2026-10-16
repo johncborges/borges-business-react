@@ -233,3 +233,36 @@ export const FACTS: Fact[] = [
   { title: 'You own it', body: 'Your domain, site and accounts are in your name.' },
   { title: 'No lock-in', body: 'Monthly care, cancel any time.' },
 ];
+
+export interface Faq {
+  q: string;
+  a: string;
+}
+
+/** Shown in the FAQ section and published as FAQPage structured data. Keep prices in line with PLAN_GROUPS. */
+export const FAQS: Faq[] = [
+  {
+    q: 'How much does a small business website cost?',
+    a: 'A new website of up to 5 pages is $700, one time. With your Google, Apple and Bing listings set up too, it is $950. After launch, the care plan is $70 a month for hosting, updates, backups and a monthly report, and the first month is free.',
+  },
+  {
+    q: 'Can you help if I already have a website?',
+    a: 'Yes. The Google & listings setup ($350) works with the site you have: Google Business Profile, Apple and Bing listings, Search Console and visit tracking, plus fixes from your free checkup. If your site stays with another host, I can help by the hour ($100/hour).',
+  },
+  {
+    q: 'Will I own my website and domain?',
+    a: 'Yes. Your domain, your website and your Google and other accounts are in your name. If you ever leave, you keep all of it.',
+  },
+  {
+    q: 'Do you work with businesses outside California?',
+    a: 'Yes. Everything is done online by video call and email, so I work with small businesses in any country and time zone.',
+  },
+  {
+    q: 'What is a Google Business Profile, and why does it matter?',
+    a: 'It is the free listing that shows your business on Google Search and Google Maps, with your hours, phone number, photos and reviews. For searches like “bakery near me”, it is often the first thing customers see, before your website.',
+  },
+  {
+    q: 'What is in the free online checkup?',
+    a: 'I search for your business the way a customer would and check your website on a phone, your Google, Apple and Bing listings, whether your hours and phone number match, page speed, security (https), reviews and visit tracking. You get a short report of what works and what to fix, with no obligation.',
+  },
+];
