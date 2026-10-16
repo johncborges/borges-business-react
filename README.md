@@ -6,7 +6,7 @@ Live at <https://jcborges.com/> (hosted on DreamHost).
 
 ## Stack
 
-React 18 + TypeScript + Vite, tested with Vitest and Testing Library, linted with ESLint (including `jsx-a11y`) and formatted with Prettier. CI runs on every push and pull request.
+React 18 + TypeScript + Vite, tested with Vitest and Testing Library (unit) and Playwright (end-to-end), linted with ESLint (including `jsx-a11y`) and formatted with Prettier. CI runs on every push and pull request.
 
 ## Develop
 
@@ -15,7 +15,16 @@ npm install
 npm run dev        # local dev server
 npm run check      # lint + typecheck + tests
 npm run build      # production build in dist/
+npm run test:e2e   # end-to-end tests in a real browser
 ```
+
+## End-to-end tests
+
+[Playwright](https://playwright.dev) tests in `e2e/` build the site, serve it with `vite preview` and drive it in Chromium at desktop and phone (Pixel 7) sizes. They cover the nav and phone menu, the skip link, pricing, the free check form (success, failure and offline, with the Web3Forms request intercepted so no email is sent), the files in `public/`, and an [axe](https://github.com/dequelabs/axe-core) accessibility scan in light and dark mode.
+
+Run `npx playwright install chromium` once before the first run. `npm run test:e2e:ui` opens Playwright's UI for debugging. In CI they run as a separate `e2e` job; on failure, the report and traces are uploaded as a build artifact.
+
+`playwright-core` is listed alongside `@playwright/test` so `@axe-core/playwright` shares the same copy. Upgrade the two together.
 
 ## Editing content
 
