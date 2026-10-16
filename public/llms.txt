@@ -21,14 +21,14 @@ Step 1, build or fix it (one time):
 
 - [New website + listings](https://jcborges.com/#pricing): $950, a new site of up to 5 pages plus Google, Apple and Bing listings and search setup, first month of care free (saves $100)
 - [New website](https://jcborges.com/#pricing): $700 for up to 5 pages designed for phones first, with contact form, map and tap-to-call; first month of care free
-- [Google & listings setup](https://jcborges.com/#pricing): $350 for a new or existing site: Google Business Profile, Apple and Bing listings, Search Console, sitemap, visit tracking and fixes from the free online checkup
+- [Google & listings setup](https://jcborges.com/#pricing): $350 for a new or existing site: Google Business Profile, Apple and Bing listings, the same details on up to 5 key directories, Search Console, sitemap, visit tracking, and up to 1 hour of small fixes on the current site
 
 Step 2, keep it working (pick one):
 
 - [Care plan](https://jcborges.com/#pricing): $70 per month for any site John hosts, built by him or moved to him; hosting, security updates, backups, a monthly report and 1 hour of changes; cancel anytime
 - [By the hour](https://jcborges.com/#pricing): $100 per hour with a 1-hour minimum per request, for sites hosted elsewhere or work beyond the care plan's included hour
 
-Notes: moving an existing site to John's hosting is $100 one time, free when joining the care plan. Extra pages are $100 each beyond 5; online stores and booking systems are quoted after the free checkup. Clients pay for their own domain (about $15 to $20 a year) and any business email. Payment is 50% to start, 50% at launch.
+Notes: moving an existing site to John's hosting is $100 one time, free when joining the care plan. Extra pages are $100 each beyond 5; online stores and booking systems are quoted after the free checkup. Bigger problems the checkup finds (a site that breaks on phones, slow pages, no https, domain access) are quoted before any work or billed by the hour. Clients pay for their own domain (about $15 to $20 a year) and any business email. Payment is 50% to start, 50% at launch.
 
 ## Contact
 

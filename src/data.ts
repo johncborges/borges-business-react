@@ -176,7 +176,8 @@ export const PLAN_GROUPS: PlanGroup[] = [
           'For a new site or the one you have',
           'Google Business Profile, Apple and Bing listings',
           'Search Console, sitemap and visit tracking',
-          'Fixes from your free online checkup',
+          'The same details on up to 5 key directories',
+          'Up to 1 hour of small fixes on your current site',
         ],
       },
     ],
@@ -218,6 +219,7 @@ export const PLANS: Plan[] = PLAN_GROUPS.flatMap((g) => g.plans);
 export const PRICING_NOTES: string[] = [
   'Moving an existing site to my hosting: $100 one time, free when you join the care plan.',
   'Extra pages: $100 each beyond 5. Online stores and booking systems are quoted after the free checkup.',
+  'Bigger problems the checkup finds, like a site that breaks on phones, slow pages, no https or a domain you can’t access, are quoted before any work or billed by the hour.',
   'You pay for your own domain (about $15 to $20 a year) and any business email, so they stay in your name.',
   'Payment: 50% to start, 50% at launch.',
 ];
@@ -247,7 +249,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: 'Can you help if I already have a website?',
-    a: 'Yes. The Google & listings setup ($350) works with the site you have: Google Business Profile, Apple and Bing listings, Search Console and visit tracking, plus fixes from your free checkup. If your site stays with another host, I can help by the hour ($100/hour).',
+    a: 'Yes. The Google & listings setup ($350) works with the site you have: Google Business Profile, Apple and Bing listings, the same details on up to 5 key directories, Search Console and visit tracking, plus up to 1 hour of small fixes on your site, like hours, phone number, page titles or tap-to-call. Bigger problems from your free checkup, like a site that breaks on phones, are quoted before any work. If your site stays with another host, later help is by the hour ($100/hour).',
   },
   {
     q: 'Will I own my website and domain?',
