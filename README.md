@@ -2,7 +2,7 @@
 
 Marketing site for **JC Borges**, a service that helps small businesses get found online: a website that works on every phone, Google Business Profile and map listings, local SEO, reviews and a monthly report.
 
-Live at <https://web.johncborges.com/> (hosted on DreamHost).
+Live at <https://jcborges.com/> (hosted on DreamHost).
 
 ## Stack
 
@@ -38,4 +38,4 @@ Without a key the form shows an error and offers a pre-filled email link instead
 ## Deploy to DreamHost
 
 1. `npm run build`
-2. Upload the contents of `dist/` to the `web.johncborges.com` folder on DreamHost (SFTP or the panel's File Manager).
+2. Upload the contents of `dist/` to the `jcborges.com` folder on DreamHost (SFTP or the panel's File Manager).

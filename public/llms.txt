@@ -6,12 +6,12 @@ Every engagement starts with a free online checkup: John searches for the busine
 
 ## Services
 
-- [Websites](https://web.johncborges.com/#services): fast, mobile-first sites with easy ways to call, book or buy
-- [Search and local SEO](https://web.johncborges.com/#services): Search Console, sitemap, page titles and business details search engines can read
-- [Google Business Profile and map listings](https://web.johncborges.com/#services): Google, Apple Business Connect, Bing Places and key directories
-- [Reviews](https://web.johncborges.com/#services): review request links, QR cards and reply templates
-- [Domain, email and security](https://web.johncborges.com/#services): domain and hosting moves, email on your own domain, https and backups
-- [Monthly report](https://web.johncborges.com/#services): visits, calls and searches, with one or two next steps
+- [Websites](https://jcborges.com/#services): fast, mobile-first sites with easy ways to call, book or buy
+- [Search and local SEO](https://jcborges.com/#services): Search Console, sitemap, page titles and business details search engines can read
+- [Google Business Profile and map listings](https://jcborges.com/#services): Google, Apple Business Connect, Bing Places and key directories
+- [Reviews](https://jcborges.com/#services): review request links, QR cards and reply templates
+- [Domain, email and security](https://jcborges.com/#services): domain and hosting moves, email on your own domain, https and backups
+- [Monthly report](https://jcborges.com/#services): visits, calls and searches, with one or two next steps
 
 ## Pricing
 
@@ -21,11 +21,11 @@ Every engagement starts with a free online checkup: John searches for the busine
 
 ## Contact
 
-- [Request a free online checkup](https://web.johncborges.com/#contact): business name, location, website and how to reach you
-- [Email](mailto:johncborges+web@gmail.com): johncborges+web@gmail.com
-- [About John Borges](https://web.johncborges.com/#about)
+- [Request a free online checkup](https://jcborges.com/#contact): business name, location, website and how to reach you
+- [Email](mailto:john@jcborges.com): john@jcborges.com
+- [About John Borges](https://jcborges.com/#about)
 
 ## Optional
 
-- [Sitemap](https://web.johncborges.com/sitemap.xml)
+- [Sitemap](https://jcborges.com/sitemap.xml)
 - [John Borges, personal site](https://www.johncborges.com/)
