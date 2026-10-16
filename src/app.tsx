@@ -13,8 +13,8 @@ export default function App() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
+      <Header />
       <div className="wrap">
-        <Header />
         <main id="main" tabIndex={-1}>
           <Hero />
           <Services />

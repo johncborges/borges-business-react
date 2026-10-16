@@ -27,9 +27,7 @@ describe('App', () => {
     for (const s of SERVICES) expect(screen.getByRole('heading', { name: s.title })).toBeInTheDocument();
     for (const p of PLANS) expect(screen.getByRole('heading', { name: p.name })).toBeInTheDocument();
     const passed = SAMPLE_REPORT.checks.filter((c) => c.status === 'good').length;
-    expect(
-      screen.getByLabelText(`${passed} of ${SAMPLE_REPORT.checks.length} checks passed`),
-    ).toBeInTheDocument();
+    expect(screen.getByText(`${passed} of ${SAMPLE_REPORT.checks.length} checks passed`)).toBeInTheDocument();
   });
 });
 
@@ -95,5 +93,30 @@ describe('Free check form', () => {
     await user.click(screen.getByRole('button', { name: 'Copy email' }));
     expect(await navigator.clipboard.readText()).toBe(BRAND.email);
     expect(await screen.findByRole('button', { name: 'Copied' })).toBeInTheDocument();
+  });
+});
+
+describe('Phone menu', () => {
+  it('opens and closes the menu and reports its state', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    const button = screen.getByRole('button', { name: 'Menu' });
+    expect(button).toHaveAttribute('aria-expanded', 'false');
+    expect(button).toHaveAttribute('aria-controls', 'main-nav');
+
+    await user.click(button);
+    expect(screen.getByRole('button', { name: 'Close' })).toHaveAttribute('aria-expanded', 'true');
+
+    await user.keyboard('{Escape}');
+    expect(screen.getByRole('button', { name: 'Menu' })).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('closes after a section link is chosen', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+    await user.click(screen.getByRole('button', { name: 'Menu' }));
+    const nav = screen.getByRole('navigation', { name: 'Main' });
+    await user.click(within(nav).getByRole('link', { name: SECTIONS[0].label }));
+    expect(screen.getByRole('button', { name: 'Menu' })).toHaveAttribute('aria-expanded', 'false');
   });
 });

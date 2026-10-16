@@ -11,7 +11,8 @@
   --gold-soft: #ffe3cf;
   --good: #2f7d32;
   --bad: #c62828;
-  --warn: #b26a00;
+  --warn: #a06000;
+  --field: #82868b;
   --display: 'Archivo', 'Arial Black', system-ui, sans-serif;
   --body: 'Work Sans', 'Helvetica Neue', Arial, system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
@@ -31,6 +32,7 @@
     --good: #6cc070;
     --bad: #ff6b5e;
     --warn: #ffb74d;
+    --field: #73787e;
     color-scheme: dark;
   }
 }
@@ -47,6 +49,7 @@
   --good: #6cc070;
   --bad: #ff6b5e;
   --warn: #ffb74d;
+  --field: #73787e;
   color-scheme: dark;
 }
 
@@ -107,18 +110,22 @@ a {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 10;
+  /* full width: cancel the body's side padding, then add it back inside */
+  margin-inline: -16px;
+  padding-inline: 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.site-header-inner {
+  position: relative;
+  max-width: 1080px;
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding-block: 14px;
   flex-wrap: wrap;
-  background: var(--bg);
-  /* paint the background and bottom rule edge to edge, beyond the centered column */
-  box-shadow:
-    0 0 0 100vmax var(--bg),
-    0 1px 0 100vmax var(--line);
-  clip-path: inset(0 -100vmax -1px);
 }
 /* keep section headings clear of the sticky header when jumping from the nav */
 [id] {
@@ -167,6 +174,46 @@ a {
 }
 .navlinks a:hover {
   color: var(--accent);
+}
+
+/* Phone menu button: hidden on wider screens */
+.menu-btn {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font: 600 0.95rem/1 var(--body);
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  min-height: 44px;
+  cursor: pointer;
+}
+.menu-icon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 18px;
+  height: 12px;
+}
+.menu-icon i {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition:
+    transform 0.2s,
+    opacity 0.2s;
+}
+.menu-icon.open i:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.menu-icon.open i:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.open i:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
 }
 
 .btn {
@@ -308,6 +355,10 @@ a {
 section {
   padding-block: 64px;
   border-top: 1px solid var(--line);
+}
+/* the header already draws a line above the hero */
+main > section:first-child {
+  border-top: 0;
 }
 .sec-head {
   display: grid;
@@ -497,7 +548,8 @@ textarea {
   font: inherit;
   color: var(--ink);
   background: var(--bg);
-  border: 1px solid var(--line);
+  /* 3:1 against the form background so fields are easy to see (WCAG 1.4.11) */
+  border: 1px solid var(--field);
   border-radius: var(--radius);
   padding: 12px;
   width: 100%;
@@ -578,8 +630,37 @@ textarea {
   .facts {
     grid-template-columns: 1fr;
   }
+  /* no gap: the (empty) nav after the button would otherwise push it 16px in from the edge */
+  .site-header-inner {
+    gap: 0;
+  }
+  .menu-btn {
+    display: inline-flex;
+    margin-left: auto;
+  }
   .navlinks {
     display: none;
+  }
+  .navlinks.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    right: -16px;
+    padding: 6px 16px 14px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 16px 24px -18px rgba(0, 0, 0, 0.45);
+  }
+  .navlinks.open li + li {
+    border-top: 1px solid var(--line);
+  }
+  .navlinks.open a {
+    display: block;
+    padding: 14px 4px;
+    font: 600 1.15rem/1.2 var(--display);
   }
   section {
     padding-block: 48px;
@@ -597,6 +678,10 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .menu-icon i,
+  .btn {
+    transition: none;
   }
 }
 body {
@@ -673,4 +758,17 @@ form .btn {
 .btn[disabled] {
   opacity: 0.6;
   cursor: progress;
+}
+
+/* Text for screen readers only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
