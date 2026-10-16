@@ -26,9 +26,14 @@ export default function PresenceReport() {
           <p className="label">Online checkup · example</p>
           <strong>{business}</strong>
         </div>
-        <p className="score" aria-label={`${passed} of ${checks.length} checks passed`}>
-          {passed}
-          <small> / {checks.length}</small>
+        <p className="score">
+          <span aria-hidden="true">
+            {passed}
+            <small> / {checks.length}</small>
+          </span>
+          <span className="sr-only">
+            {passed} of {checks.length} checks passed
+          </span>
         </p>
       </div>
       <ul className="checks">
