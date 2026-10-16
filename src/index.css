@@ -553,7 +553,6 @@ main > section:first-child {
 
 .faq {
   border-top: 1px solid var(--line);
-  max-width: 860px;
 }
 .faq details {
   border-bottom: 1px solid var(--line);

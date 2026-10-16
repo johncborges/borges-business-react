@@ -4,8 +4,8 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div>
-        <p className="label">Small business websites &amp; Google setup</p>
-        <h1 id="hero-title">Make sure customers can find you, and like what they find.</h1>
+        <p className="label">Websites, Google &amp; local SEO</p>
+        <h1 id="hero-title">Small business websites customers can find, and like what they find.</h1>
         <p className="lede">
           A website is only one piece. When someone looks you up, they also need to find you on Google and on
           maps, with the right hours and phone number everywhere. I set all of it up and keep it working, for
