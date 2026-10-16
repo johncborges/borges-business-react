@@ -117,7 +117,7 @@ export const STEPS: Step[] = [
   },
   {
     title: 'Keep it working',
-    body: 'On a care plan, I keep everything current and send a monthly report. Cancel any month.',
+    body: 'For sites I host, the care plan keeps everything current with a monthly report. Cancel any month.',
   },
 ];
 
@@ -126,39 +126,100 @@ export interface Plan {
   price: string;
   unit: string;
   items: string[];
-  featured?: boolean;
+  /** Short highlight shown above the plan name, e.g. "Recommended". */
+  tag?: string;
 }
 
-export const PLANS: Plan[] = [
+export interface PlanGroup {
+  step: string;
+  title: string;
+  note: string;
+  plans: Plan[];
+}
+
+/** Pricing in two steps: a one-time build or fix, then an ongoing way to keep it working. */
+export const PLAN_GROUPS: PlanGroup[] = [
   {
-    name: 'Google & listings fix-up',
-    price: '$350',
-    unit: 'one time',
-    items: [
-      'Keep your current site',
-      'Fix listings on Google, Apple and Bing',
-      'Search Console and basic search setup',
+    step: 'Step 1',
+    title: 'Build or fix it',
+    note: 'One time',
+    plans: [
+      {
+        name: 'New website + listings',
+        price: '$950',
+        unit: 'one time',
+        tag: 'Most popular',
+        items: [
+          'Both of the next two plans together',
+          'A new site, up to 5 pages',
+          'Google, Apple and Bing listings and search setup',
+          'First month of care free',
+          'Save $100',
+        ],
+      },
+      {
+        name: 'New website',
+        price: '$700',
+        unit: 'one time',
+        items: [
+          'Up to 5 pages, designed for phones first',
+          'Contact form, map and tap-to-call',
+          'Basic page titles and descriptions',
+          'First month of care free',
+        ],
+      },
+      {
+        name: 'Google & listings setup',
+        price: '$350',
+        unit: 'one time',
+        items: [
+          'For a new site or the one you have',
+          'Google Business Profile, Apple and Bing listings',
+          'Search Console, sitemap and visit tracking',
+          'Fixes from your free online checkup',
+        ],
+      },
     ],
   },
   {
-    name: 'New site + care',
-    price: '$900',
-    unit: '+ $69/mo',
-    featured: true,
-    items: [
-      'Up to 5 pages',
-      'All listings and search setup',
-      'Hosting, backups and security',
-      'Monthly report and 1 hour of changes',
-      'Cancel anytime',
+    step: 'Step 2',
+    title: 'Keep it working',
+    note: 'Ongoing, pick one',
+    plans: [
+      {
+        name: 'Care plan',
+        price: '$70',
+        unit: '/month',
+        tag: 'Recommended',
+        items: [
+          'For any site I host: one I built, or one you move to me',
+          'Hosting, security updates and backups',
+          'Monthly report and 1 hour of changes',
+          'Cancel anytime',
+        ],
+      },
+      {
+        name: 'By the hour',
+        price: '$100',
+        unit: '/hour',
+        items: [
+          'For sites hosted elsewhere',
+          "Or work beyond the care plan's included hour",
+          '1-hour minimum per request',
+          'No monthly commitment',
+        ],
+      },
     ],
   },
-  {
-    name: 'Care only',
-    price: '$49',
-    unit: '/mo',
-    items: ['For a site you already have', 'Updates, backups, monitoring', 'Monthly report'],
-  },
+];
+
+export const PLANS: Plan[] = PLAN_GROUPS.flatMap((g) => g.plans);
+
+export const PRICING_NOTES: string[] = [
+  'Moving an existing site to my hosting: $100 one time, free when you join the care plan.',
+  'Extra pages: $100 each beyond 5. Online stores and booking systems are quoted after the free checkup.',
+  'You pay for your own domain (about $15 to $20 a year) and any business email, so they stay in your name.',
+  'Payment: 50% to start, 50% at launch.',
 ];
 
 export interface Fact {

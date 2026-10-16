@@ -2,7 +2,7 @@
 
 > JC Borges helps small businesses of any kind, anywhere, get found online: a website that works on every phone, Google Business Profile and map listings (Google, Apple, Bing), local SEO, reviews and a plain-English monthly report. Run by John Borges, a principal software engineer based in Rio Vista, California, working with clients by video and email.
 
-Every engagement starts with a free online checkup: John searches for the business the way a customer would and sends a short report of what works and what doesn't. Prices are flat and in US dollars. Clients own their domain, site and accounts, and monthly care can be cancelled any month.
+Every engagement starts with a free online checkup: John searches for the business the way a customer would and sends a short report of what works and what doesn't. Prices are flat and in US dollars. Clients own their domain, site and accounts, and monthly care (for any site John hosts, whether he built it or not) can be cancelled any month.
 
 ## Services
 
@@ -15,9 +15,20 @@ Every engagement starts with a free online checkup: John searches for the busine
 
 ## Pricing
 
-- [Google & listings fix-up](https://web.johncborges.com/#pricing): $350 one time
-- [New site + care](https://web.johncborges.com/#pricing): $900 plus $69 per month
-- [Care only](https://web.johncborges.com/#pricing): $49 per month for an existing site
+Two steps, flat prices in US dollars.
+
+Step 1, build or fix it (one time):
+
+- [New website + listings](https://jcborges.com/#pricing): $950, a new site of up to 5 pages plus Google, Apple and Bing listings and search setup, first month of care free (saves $100)
+- [New website](https://jcborges.com/#pricing): $700 for up to 5 pages designed for phones first, with contact form, map and tap-to-call; first month of care free
+- [Google & listings setup](https://jcborges.com/#pricing): $350 for a new or existing site: Google Business Profile, Apple and Bing listings, Search Console, sitemap, visit tracking and fixes from the free online checkup
+
+Step 2, keep it working (pick one):
+
+- [Care plan](https://jcborges.com/#pricing): $70 per month for any site John hosts, built by him or moved to him; hosting, security updates, backups, a monthly report and 1 hour of changes; cancel anytime
+- [By the hour](https://jcborges.com/#pricing): $100 per hour with a 1-hour minimum per request, for sites hosted elsewhere or work beyond the care plan's included hour
+
+Notes: moving an existing site to John's hosting is $100 one time, free when joining the care plan. Extra pages are $100 each beyond 5; online stores and booking systems are quoted after the free checkup. Clients pay for their own domain (about $15 to $20 a year) and any business email. Payment is 50% to start, 50% at launch.
 
 ## Contact
 
