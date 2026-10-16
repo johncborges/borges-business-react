@@ -176,7 +176,7 @@ export const PLAN_GROUPS: PlanGroup[] = [
           'For a new site or the one you have',
           'Google Business Profile, Apple and Bing listings',
           'Search Console, sitemap and visit tracking',
-          'The same details on up to 5 key directories',
+          'Matching name, address, phone and hours on up to 5 other sites, like Yelp and Facebook',
           'Up to 1 hour of small fixes on your current site',
         ],
       },
@@ -249,7 +249,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: 'Can you help if I already have a website?',
-    a: 'Yes. The Google & listings setup ($350) works with the site you have: Google Business Profile, Apple and Bing listings, the same details on up to 5 key directories, Search Console and visit tracking, plus up to 1 hour of small fixes on your site, like hours, phone number, page titles or tap-to-call. Bigger problems from your free checkup, like a site that breaks on phones, are quoted before any work. If your site stays with another host, later help is by the hour ($100/hour).',
+    a: 'Yes. The Google & listings setup ($350) works with the site you have: Google Business Profile, Apple and Bing listings, matching details on up to 5 other sites like Yelp and Facebook, Search Console and visit tracking, plus up to 1 hour of small fixes on your site, like hours, phone number, page titles or tap-to-call. Bigger problems from your free checkup, like a site that breaks on phones, are quoted before any work. If your site stays with another host, later help is by the hour ($100/hour).',
   },
   {
     q: 'Will I own my website and domain?',
