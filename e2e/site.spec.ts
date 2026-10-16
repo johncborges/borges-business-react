@@ -83,7 +83,7 @@ test('serves prerendered content and structured data to crawlers that skip JavaS
   request,
 }) => {
   const html = await (await request.get('/')).text();
-  expect(html).toMatch(/<h1[^>]*>Make sure customers can find you/);
+  expect(html).toMatch(/<h1[^>]*>Small business websites customers can find/);
   for (const plan of PLAN_GROUPS.flatMap((g) => g.plans)) expect(html).toContain(plan.price);
 
   const json = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)?.[1];
