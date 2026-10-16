@@ -3,3 +3,6 @@ dist
 .DS_Store
 coverage
 .env.local
+dist-e2e
+test-results
+playwright-report

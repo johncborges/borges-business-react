@@ -12,6 +12,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run typecheck && npm run test"
@@ -21,7 +23,9 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@eslint/js": "^9.12.0",
+    "@playwright/test": "^1.63.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
@@ -36,6 +40,7 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "globals": "^15.9.0",
     "jsdom": "^25.0.0",
+    "playwright-core": "^1.63.0",
     "prettier": "^3.3.3",
     "typescript": "^5.6.0",
     "typescript-eslint": "^8.8.0",
