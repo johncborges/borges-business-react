@@ -5,6 +5,7 @@ import Process from './components/process';
 import Pricing from './components/pricing';
 import About from './components/about';
 import Contact from './components/contact';
+import Faq from './components/faq';
 import { BRAND } from './data';
 
 export default function App() {
@@ -21,10 +22,12 @@ export default function App() {
           <Process />
           <Pricing />
           <About />
+          <Faq />
           <Contact />
         </main>
         <footer className="site-footer">
-          <span>
+          {/* the prerendered year can be stale until the next build */}
+          <span suppressHydrationWarning>
             © {new Date().getFullYear()} {BRAND.name}
           </span>
           <span>{BRAND.tagline}</span>

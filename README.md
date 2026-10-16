@@ -14,7 +14,7 @@ React 18 + TypeScript + Vite, tested with Vitest and Testing Library (unit) and 
 npm install
 npm run dev        # local dev server
 npm run check      # lint + typecheck + tests
-npm run build      # production build in dist/
+npm run build      # production build in dist/, prerendered (see SEO below)
 npm run test:e2e   # end-to-end tests in a real browser
 ```
 
@@ -31,6 +31,10 @@ Run `npx playwright install chromium` once before the first run. `npm run test:e
 All copy, prices and contact details live in [`src/data.ts`](src/data.ts). Change the business name in `BRAND` and in `index.html` / `public/sitemap.xml` if it changes.
 
 ## Files for search engines and AI tools
+
+## SEO
+
+`npm run build` runs `scripts/build.mjs`: a normal Vite build, then a server-side render of the page into `dist/index.html`, so search engines, link previews and AI crawlers get the full content without running JavaScript. The browser then hydrates that HTML. The same step adds JSON-LD structured data built from `src/data.ts` by `src/structured-data.ts` (business, pricing as offers, founder and the FAQ), so it can't drift from the page. Check it with Google's [Rich Results Test](https://search.google.com/test/rich-results) after deploying. The share image is `public/og-image.png` (1200×630).
 
 `public/robots.txt`, `public/sitemap.xml` and `public/llms.txt` (a Markdown summary of the site for AI assistants, per [llmstxt.org](https://llmstxt.org)). When prices, services or contact details change in `src/data.ts`, update `public/llms.txt` to match.
 

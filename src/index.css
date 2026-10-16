@@ -551,6 +551,41 @@ main > section:first-child {
   font-size: 0.92rem;
 }
 
+.faq {
+  border-top: 1px solid var(--line);
+  max-width: 860px;
+}
+.faq details {
+  border-bottom: 1px solid var(--line);
+}
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-block: 18px;
+  cursor: pointer;
+  list-style: none;
+  font: 700 1.1rem/1.35 var(--display);
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: '+';
+  flex: none;
+  font: 500 1.25rem/1 var(--mono);
+  color: var(--accent);
+}
+.faq details[open] summary::after {
+  content: '\2212';
+}
+.faq details p {
+  color: var(--muted);
+  max-width: 70ch;
+  padding-bottom: 20px;
+}
+
 .contact {
   display: grid;
   grid-template-columns: 1fr 1.1fr;

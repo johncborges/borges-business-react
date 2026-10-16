@@ -78,3 +78,23 @@ for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt']) {
     expect(await res.text()).toContain(BRAND.url);
   });
 }
+
+test('serves prerendered content and structured data to crawlers that skip JavaScript', async ({
+  request,
+}) => {
+  const html = await (await request.get('/')).text();
+  expect(html).toMatch(/<h1[^>]*>Make sure customers can find you/);
+  for (const plan of PLAN_GROUPS.flatMap((g) => g.plans)) expect(html).toContain(plan.price);
+
+  const json = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)?.[1];
+  const types = (JSON.parse(json!)['@graph'] as { '@type': string }[]).map((n) => n['@type']);
+  expect(types).toEqual(expect.arrayContaining(['WebSite', 'ProfessionalService', 'FAQPage']));
+});
+
+for (const file of ['og-image.png', 'apple-touch-icon.png', 'icon-512.png']) {
+  test(`serves ${file}`, async ({ request }) => {
+    const res = await request.get(`/${file}`);
+    expect(res.ok()).toBe(true);
+    expect(res.headers()['content-type']).toBe('image/png');
+  });
+}
